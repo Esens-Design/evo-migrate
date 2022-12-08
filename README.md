@@ -2,8 +2,17 @@
 EvolutionCMS module for migrating v1.4, v2 to v3.x
 Works with PHP 7 and PHP 8
 
-NB: v2 code is not PHP8 compatible.  This script has only been tested for v2 in PHP7.4
+# Bob's Notes:
+- Line 6 has a null coalescing assignment operator that only works for php >=7.4, if you need to use this on 7.3 switch it out for the following
+```
+$_REQUEST['action'] = $_REQUEST['action'] ?? '';
+```
+- Disable userHelper plugin
+- Make sure we are using the default theme
+- Make sure your on the latest 1.4 or 2.0
+- Should switch to EN or NL language after installation
 
+# How it works:
 The program does the following:
 
 1. Creates new manager group names from web group names
